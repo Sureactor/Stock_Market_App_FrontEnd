@@ -9,19 +9,23 @@ import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-pa
 import { ManageCompaniesComponent } from './manage-companies/manage-companies.component';
 import { CompanyServiceService } from './company-service.service';
 import { EditCompanyComponent } from './edit-company/edit-company.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddCompanyComponent } from './add-company/add-company.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLandingPageComponent,
     ManageCompaniesComponent,
-    EditCompanyComponent
+    EditCompanyComponent,
+    AddCompanyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [CompanyServiceService],
   bootstrap: [AppComponent]

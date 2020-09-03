@@ -31,12 +31,16 @@ export class CompanyServiceService {
         return this.http.get(url);
       case "PUT":
         return this.http.put(url,data);
+      case "POST":
+        return this.http.post(url,data);
+      case "DELETE":
+        return this.http.delete(url);
     }
     
    }
   resolve(route:ActivatedRouteSnapshot,rstate:RouterStateSnapshot):Observable<any>{
     // return this.http.get("http://localhost:8081/user/company/getAll");
-    let newsUrl = "http://localhost:8081/user/company/getAll";
+    let newsUrl = "http://localhost:8080/user/company/getAll";
 
     return this.http.get(newsUrl).pipe(
       map( (dataFromApi) => dataFromApi ),
