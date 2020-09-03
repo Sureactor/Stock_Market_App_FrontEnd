@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Company } from './Company';
+import { Company } from '../Company';
 import { ThrowStmt } from '@angular/compiler';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CompanyServiceService } from '../company-service.service';
 
 @Component({
   selector: 'app-admin-landing-page',
@@ -11,23 +13,22 @@ import { ThrowStmt } from '@angular/compiler';
 export class AdminLandingPageComponent implements OnInit {
 
   company:Array<Company>;
-  
-  constructor(private http:HttpClient) { 
+  service:CompanyServiceService;
+  constructor(private http:HttpClient,private router:Router,private activatedRoute:ActivatedRoute,service:CompanyServiceService) { 
     this.http = http;
+    this.router = router;
+    this.activatedRoute=activatedRoute;
   }
 
   ngOnInit(): void {
   }
 
-  manageCompany(){
-    let obs = this.http.get("http://localhost:8081/user/company/getAll");
-    obs.subscribe((res : Response) => {
-      console.log(res);
-      let st = JSON.stringify(res);
-      this.company = <Company[]> JSON.parse(st);
-      console.log(this.company);
-    })
+  getAllCompany(){
+    this.router.navigateByUrl('/admin/companies');
+  }
       
   }
 
-}
+  
+
+

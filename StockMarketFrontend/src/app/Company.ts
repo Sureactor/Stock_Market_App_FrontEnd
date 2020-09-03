@@ -4,7 +4,7 @@ export class Company{
     brief:string;
     code:string;
     name:string;
-    contctId:number;
+    contactId:number;
     sectorId:number;
     stockExchangeId:number;
 

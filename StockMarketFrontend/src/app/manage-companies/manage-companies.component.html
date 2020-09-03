@@ -1,0 +1,12 @@
+<div *ngFor='let comp of company;let i = index'>
+    <button>{{comp.ceo}}</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button (click)="editCompany(i)">
+        Edit
+    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button>
+        Delete
+    </button>
+    <br><br>
+</div>
+
+<button>Add new one</button>

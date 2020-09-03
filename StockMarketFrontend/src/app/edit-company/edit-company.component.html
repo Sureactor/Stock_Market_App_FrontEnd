@@ -1,0 +1,11 @@
+Company ID : <input type="number" step="1" [value]="company.companyId" name="companyId"  [(ngModel)]="company.companyId" (ngModelChange)='isUpdated($event)'><br>
+CEO : <input type="text" [value]="company.ceo" name="ceo"  [(ngModel)]="company.ceo" (ngModelChange)='isUpdated($event)'><br>
+Brief : <input type="text" [value]="company.brief" name="brief" [(ngModel)]="company.brief" (ngModelChange)='isUpdated($event)'><br>
+Code : <input type="text" [value]="company.code" name="code" [(ngModel)]="company.code" (ngModelChange)='isUpdated($event)'><br>
+Name : <input type="text" [value]="company.name" name="name" [(ngModel)]="company.name" (ngModelChange)='isUpdated($event)'><br>
+Contact ID<input type="number" step="1" [value]="company.contactId" name="contactId" [(ngModel)]="company.contactId" (ngModelChange)='isUpdated($event)'><br>
+Sector ID<input type="number" step="1" [value]="company.sectorId" name="sectorId" [(ngModel)]="company.sectorId" (ngModelChange)='isUpdated($event)'><br>
+Stock Exchange ID<input type="number" step="1" [value]="company.stockExchangeId" name="stockExchangeID" [(ngModel)]="company.stockExchangeId" (ngModelChange)='isUpdated($event)'><br>
+
+<button [disabled]="!isValid" (click)="updateEntries()">Update</button>
+
