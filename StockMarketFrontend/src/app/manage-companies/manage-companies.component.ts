@@ -21,11 +21,12 @@ export class ManageCompaniesComponent implements OnInit {
       //   this.company = <Company[]> JSON.parse(st);
       //   console.log(this.company);
       // })
-      
+      console.log(this.company);
       }
 
       ngOnInit(){
         this.company = this.activatedRoute.snapshot.data['comp'];
+        console.log(this.company);
         this.service.company = this.company;
       }
 
@@ -33,6 +34,23 @@ export class ManageCompaniesComponent implements OnInit {
         this.service.currentIndex = index;
         console.log(index);
         this.route.navigateByUrl('admin/companies/editCompany')
+      }
+
+      deleteCompany(index:number){
+          console.log("company ");
+          console.log(this.company[0].companyId);
+          console.log(index);
+          // let ob = this.company[]
+          let id = this.company[index].companyId;
+          let obs = this.service.manageCompany("http://localhost:8080/admin/company/delete/"+id,"DELETE",index);
+          obs.subscribe((res:Response)=>{
+            this.company.splice(index,1);
+          })
+
+      }
+
+      addCompany(){
+        this.route.navigateByUrl("admin/companies/addCompany");
       }
    }
 

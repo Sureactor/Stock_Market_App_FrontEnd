@@ -1,0 +1,21 @@
+Company ID : <input type="number" step="1" placeholder="CompanyID" name="companyId"  [(ngModel)]="company.companyId" required><br>
+CEO : <input type="text" placeholder="CEO" name="ceo"  [(ngModel)]="company.ceo" required><br>
+Brief : <input type="textbox" placeholder="Brief" name="brief" [(ngModel)]="company.brief" required><br>
+Code : <input type="text" placeholder="Code" name="code" [(ngModel)]="company.code" required><br>
+Name : <input type="text" placeholder="Name" name="name" [(ngModel)]="company.name" required><br>
+Contact ID<input type="number" step="1" placeholder="Contact ID" name="contactId" [(ngModel)]="company.contactId" required><br>
+Sector ID<input type="number" step="1" placeholder="Sector ID" name="sectorId" [(ngModel)]="company.sectorId" required><br>
+Stock Exchange ID<input type="number" step="1" placeholder="Stock Exchange ID" name="stockExchangeID" [(ngModel)]="company.stockExchangeId" required><br>
+
+<button (click)="addEntry()">ADD</button>
+
+<div *ngIf="isShow">
+    Company ID : {{company.companyId}}<br>
+    CEO : {{company.ceo}}<br>
+    Brief : {{company.brief}}<br>
+    Code : {{company.code}}<br>
+    Name : {{company.name}}<br>
+    Contact ID : {{company.contactId}}<br>
+    Sector ID : {{company.sectorId}}<br>
+    Stock Exchange ID : {{company.stockExchangeID}}<br>
+</div>
