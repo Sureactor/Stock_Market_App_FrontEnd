@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 import { ViewStockExchangeComponent } from './view-stock-exchange/view-stock-exchange.component';
 import { StockExchangeComponent } from './stock-exchange/stock-exchange.component';
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
+import { SuccessComponent } from './success/success.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserLandingPageComponent } from './user-landing-page/user-landing-page.
     HomeComponent,
     ViewStockExchangeComponent,
     StockExchangeComponent,
-    UserLandingPageComponent
+    UserLandingPageComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule,

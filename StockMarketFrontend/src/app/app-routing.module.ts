@@ -11,11 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { ViewStockExchangeComponent } from './view-stock-exchange/view-stock-exchange.component';
 import { StockExchangeComponent } from './stock-exchange/stock-exchange.component';
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component'
+import { SuccessComponent } from './success/success.component'
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'admin', component: AdminLandingPageComponent },
-  { path: 'user', component: UserLandingPageComponent},
+  { path: 'user', component: UserLandingPageComponent },
+  { path: 'success', component: SuccessComponent },
   { path: '', redirectTo: '/home', pathMatch:'full' },
   { path: 'admin/companies', component:ManageCompaniesComponent, resolve:{comp:CompanyServiceService}},
   { path: 'admin/companies/editCompany',component:EditCompanyComponent},
