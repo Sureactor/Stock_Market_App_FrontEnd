@@ -40,7 +40,7 @@ export class CompanyServiceService {
    }
   resolve(route:ActivatedRouteSnapshot,rstate:RouterStateSnapshot):Observable<any>{
     // return this.http.get("http://localhost:8081/user/company/getAll");
-    let newsUrl = "http://localhost:8080/user/company/getAll";
+    let newsUrl = "http://localhost:8081/user/company/getAll";
 
     return this.http.get(newsUrl).pipe(
       map( (dataFromApi) => dataFromApi ),

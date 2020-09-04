@@ -53,9 +53,3 @@ export class ManageCompaniesComponent implements OnInit {
         this.route.navigateByUrl("admin/companies/addCompany");
       }
    }
-
-  
-
-
-
-

@@ -11,6 +11,12 @@ import { CompanyServiceService } from './company-service.service';
 import { EditCompanyComponent } from './edit-company/edit-company.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddCompanyComponent } from './add-company/add-company.component';
+import { AddStockExchangeComponent } from './add-stock-exchange/add-stock-exchange.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+import { ViewStockExchangeComponent } from './view-stock-exchange/view-stock-exchange.component';
+import { StockExchangeComponent } from './stock-exchange/stock-exchange.component';
+import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +24,13 @@ import { AddCompanyComponent } from './add-company/add-company.component';
     AdminLandingPageComponent,
     ManageCompaniesComponent,
     EditCompanyComponent,
-    AddCompanyComponent
+    AddCompanyComponent,
+    AddStockExchangeComponent,
+    PageNotFoundComponent,
+    HomeComponent,
+    ViewStockExchangeComponent,
+    StockExchangeComponent,
+    UserLandingPageComponent
   ],
   imports: [
     BrowserModule,

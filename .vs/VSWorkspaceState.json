@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\StockMarketFrontend",
+    "\\StockMarketFrontend\\src",
+    "\\StockMarketFrontend\\src\\app",
+    "\\StockMarketFrontend\\src\\app\\add-company",
+    "\\StockMarketFrontend\\src\\app\\admin-landing-page",
+    "\\StockMarketFrontend\\src\\app\\edit-company",
+    "\\StockMarketFrontend\\src\\app\\manage-companies",
+    "\\StockMarketFrontend\\src\\app\\stock-exchange",
+    "\\StockMarketFrontend\\src\\app\\view-stock-exchange"
   ],
+  "SelectedNode": "\\StockMarketFrontend\\src\\app\\view-stock-exchange\\view-stock-exchange.component.ts",
   "PreviewInSolutionExplorer": false
 }
