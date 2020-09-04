@@ -1,1 +1,46 @@
 <h1>Enter the new Stock Exchange Details</h1>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #stockexchangeForm="ngForm">
+      <div class="form-group">
+        <label for="stockExchangeId">stockExchangeId</label>
+        <input type="text" [(ngModel)]="stockexchange.stockExchangeId"
+               class="form-control"
+               id="stockExchangeId"
+               name="stockExchangeId"
+               placeholder="Enter the stockExchangeId"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="brief">brief</label>
+        <input type="text" [(ngModel)]="stockexchange.brief"
+               class="form-control"
+               id="brief"
+               name="brief"
+               placeholder="Enter the brief"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="remarks">remarks</label>
+        <input type="text" [(ngModel)]="stockexchange.remarks"
+               class="form-control"
+               id="remarks"
+               name="remarks"
+               placeholder="Enter the remarks"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="contactId">contactId</label>
+        <input type="text" [(ngModel)]="stockexchange.contactId"
+               class="form-control"
+               id="contactId"
+               name="contactId"
+               placeholder="Enter the contactId"
+               required #name="ngModel">
+      </div>
+      <button type="submit" [disabled]="!stockexchangeForm.form.valid" class="btn btn-info">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

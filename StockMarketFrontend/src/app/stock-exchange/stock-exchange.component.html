@@ -1,3 +1,21 @@
-<h1>Stock Exchange</h1>
-<button [routerLink]="'/admin/stockexchange/viewStockExchange'">Show Stock Exchanges</button><br/><br />
-<button [routerLink]="'/admin/stockexchange/addStockExchange'">Add Stock Exchange</button>
+<h1 style="text-align:center">Stock Exchange</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card bg-dark my-5">
+        <div class="card-body">
+          <ul class="text-center list-inline py-3">
+            <li class="list-inline-item">
+              <a [routerLink]="'/admin/stockexchange/viewStockExchange'" class="btn btn-info">List Stock Exchanges</a>
+            </li>
+            <li class="list-inline-item">
+              <a [routerLink]="'/admin/stockexchange/addStockExchange'" class="btn btn-info">Add Stock Exchanges</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -3,28 +3,25 @@ import { HttpClient } from '@angular/common/http';
 import { StockExchange } from './StockExchange';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-@Injectable({
+import { Observable } from 'rxjs';
+@Injectable({ 
   providedIn: 'root'
 })
 export class StockexchangeServiceService {
-  stockexchange :Array<StockExchange>;
+  stockexchange: Array<StockExchange>;
+  private addurl: string;
+  private viewurl: string;
+
   constructor(private http: HttpClient)
   {
-    this.http = http;
+    this.addurl = 'http://localhost:8081/admin/stockexchange/Add';
+    this.viewurl = 'http://localhost:8081/admin/stockexchange/get';
   }
-  showSE(url: string)
-  {
-    return this.http.get(url);
-    /*return this.http.get(url).pipe(
-      map((data: StockExchange[]) => {
-        return data;
-      }), catchError(error => {
-        return throwError('Something went wrong!');
-      })
-    );*/
+  public getAllStockExchange(): Observable<StockExchange[]> {
+    return this.http.get<StockExchange[]>(this.viewurl);
   }
-  addSE(url: string, data: any)
-  {
-    return this.http.post(url, data);
+
+  public addStockExchange(se: StockExchange) {
+    return this.http.post<StockExchange>(this.addurl, se);
   }
 }

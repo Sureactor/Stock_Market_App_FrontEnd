@@ -8,19 +8,13 @@ import { StockexchangeServiceService } from '../stockexchange-service.service'
   styleUrls: ['./view-stock-exchange.component.css']
 })
 export class ViewStockExchangeComponent implements OnInit {
-  response: any;
-  x: number=1;
-  res: StockExchange[];
+  stockexchanges: StockExchange[];
+
   constructor(private service: StockexchangeServiceService)
+  { }
+
+  ngOnInit(): void
   {
-    let obs = this.service.showSE('http://localhost:8081/admin/stockexchange/get/8')
-    obs.subscribe((response) => { this.response = response; console.log(this.response); });
-    /*obs.subscribe((data: any) => {
-      console.log(data);
-      this.res = data.data;
-    });*/
-  }
-  ngOnInit(): void {
-    
+    this.service.getAllStockExchange().subscribe(data => { this.stockexchanges = data; });  
   }
 }
