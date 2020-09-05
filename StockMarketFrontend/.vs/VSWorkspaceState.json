@@ -5,8 +5,10 @@
     "\\e2e\\src",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\admin-landing-page"
+    "\\src\\app\\add-stock-exchange",
+    "\\src\\app\\stock-exchange",
+    "\\src\\app\\success"
   ],
-  "SelectedNode": "\\src\\app\\admin-landing-page\\admin-landing-page.component.ts",
+  "SelectedNode": "\\src\\app\\stock-exchange\\stock-exchange.component.ts",
   "PreviewInSolutionExplorer": false
 }
