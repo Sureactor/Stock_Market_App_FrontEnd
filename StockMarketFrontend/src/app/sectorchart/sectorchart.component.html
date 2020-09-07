@@ -1,0 +1,22 @@
+<p>sectorchart works!</p>
+<h1>Company Comparison</h1>
+ 
+<form #sectorForm="ngForm" (ngSubmit)="onSubmit()">
+<!--     {{userForm.value | json}}
+    llllllllll
+    {{cmpmodel | json}}-->
+    <div class="form-group">
+        From : <input name="from"  type="date" datetime="yyyy-MM-dd" [(ngModel)]="cmpmodel.from"  placeholder="yyyy-MM-dd">
+        <br>
+        To : <input name="to"  type="date" [(ngModel)]="cmpmodel.to"  placeholder="yyyy-MM-dd">
+        <br>
+       <!-- value = {{cmpmodel.from | date: "yyyy-MM-dd"}}-->
+        <label> Sector</label>
+        <select class="custom-select" name="sector" [(ngModel)]="cmpmodel.sector" (change)="myfunc()">
+            <option value="">Select Sector</option>
+            <option *ngFor="let sec of sectors" value={{sec}}>{{sec}}</option>
+        </select>
+    <button class="btn btn-primary" type="submit" ngModel>Show Comparison Chart</button>
+    </div>
+</form>
+  

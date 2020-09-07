@@ -17,7 +17,7 @@ export class CompanyServiceService {
 
    
   getAllCompa(){
-    let obs = this.manageCompany("http://localhost:8081/user/company/getAll","GET",null);
+    let obs = this.manageCompany("http://localhost:8081/user/company/get","GET",null);
     obs.subscribe((res : Response) => {
       let st = JSON.stringify(res);
       this.company = <Company[]> JSON.parse(st);
@@ -40,7 +40,7 @@ export class CompanyServiceService {
    }
   resolve(route:ActivatedRouteSnapshot,rstate:RouterStateSnapshot):Observable<any>{
     // return this.http.get("http://localhost:8081/user/company/getAll");
-    let newsUrl = "http://localhost:8081/user/company/getAll";
+    let newsUrl = "http://localhost:8081/user/company/get";
 
     return this.http.get(newsUrl).pipe(
       map( (dataFromApi) => dataFromApi ),

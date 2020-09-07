@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserLandingPageComponent implements OnInit {
 
   constructor() { }
+  
 
   ngOnInit(): void {
   }

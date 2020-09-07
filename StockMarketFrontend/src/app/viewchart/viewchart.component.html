@@ -1,0 +1,47 @@
+    <div class="container-fluid">
+        <h1>Company Comparison</h1>
+ 
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+     <!--     {{userForm.value | json}}
+            llllllllll
+            {{cmpmodel | json}}-->
+            <div class="form-group">
+               <!-- value = {{cmpmodel.from | date: "yyyy-MM-dd"}}-->
+                <label> Sector</label>
+                <select class="custom-select" name="sector" [(ngModel)]="cmpmodel.sector" (change)="myfunc()">
+                    <option value="">Select Sector</option>
+                    <option *ngFor="let sec of sectors" value={{sec}}>{{sec}}</option>
+                </select>
+                <label> Stock Exchange </label>
+                <select class="custom-select" name="stock" [(ngModel)]="cmpmodel.stockexchange" (change)="myfunc()">
+                    <option value="">Select Stock Exchange </option>
+                    <option *ngFor="let exc of stockexchanges" value={{exc}}>{{exc}}</option>
+                </select>
+              <!--  <button class="btn btn-primary" onclick="submit" ngModel>Show Comparison Chart</button> -->
+                <label> Company 1</label>
+                <select class="custom-select" name="company1" [(ngModel)]="cmpmodel.company1">
+                    <option value="">Select Company 1</option>
+                    <option *ngFor="let comp of companies">{{comp}}</option>
+                </select>
+                <label> Company 2</label>
+                <select class="custom-select"  name="company2" [(ngModel)]="cmpmodel.company2">
+                    <option value="">Select Company 2</option>
+                    <option *ngFor="let comp of companies" >{{comp}}</option>
+                </select>
+                <br><br>
+                <div  style="align-items: center">  
+                <label>From </label>  <input name="from"  type="date" datetime="yyyy-MM-dd" [(ngModel)]="cmpmodel.from"  placeholder="yyyy-MM-dd">
+                &nbsp;
+                <label>To</label>  <input name="to"  type="date" [(ngModel)]="cmpmodel.to"  placeholder="yyyy-MM-dd">
+                </div>
+                <br>
+            </div>
+            <button class="btn btn-primary" type="submit" ngModel>Show Comparison Chart</button>
+        </form>
+
+    </div>
+    <script src="node_modules/chart.js/src/chart.js"></script>
+    <!--- <canvas #lineChart>{{ chart }}</canvas>-->
+    <div style="width:25%; height:25%; align-items: center  "><canvas id="canvas2"  width="100" height="100"></canvas></div> 
+    <p *ngIf="message!=null">{{message}}</p>
+    

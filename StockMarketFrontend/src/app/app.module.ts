@@ -18,6 +18,13 @@ import { ViewStockExchangeComponent } from './view-stock-exchange/view-stock-exc
 import { StockExchangeComponent } from './stock-exchange/stock-exchange.component';
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
 import { SuccessComponent } from './success/success.component';
+import { ViewipoComponent } from './viewipo/viewipo.component';
+import { AddipoComponent } from './addipo/addipo.component';
+import { ViewchartComponent } from './viewchart/viewchart.component';
+import { SectorchartComponent } from './sectorchart/sectorchart.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,14 @@ import { SuccessComponent } from './success/success.component';
     ViewStockExchangeComponent,
     StockExchangeComponent,
     UserLandingPageComponent,
-    SuccessComponent
+    SuccessComponent,
+    ViewipoComponent,
+    AddipoComponent,
+    ViewchartComponent,
+    SectorchartComponent,
+    UserloginComponent,
+    AdminloginComponent,
+    UsersignupComponent
   ],
   imports: [
     BrowserModule,

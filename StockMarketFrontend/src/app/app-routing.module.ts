@@ -12,6 +12,9 @@ import { ViewStockExchangeComponent } from './view-stock-exchange/view-stock-exc
 import { StockExchangeComponent } from './stock-exchange/stock-exchange.component';
 import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component'
 import { SuccessComponent } from './success/success.component'
+import { ViewipoComponent } from './viewipo/viewipo.component';
+import { ViewchartComponent } from './viewchart/viewchart.component';
+import { SectorchartComponent } from './sectorchart/sectorchart.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,6 +28,9 @@ const routes: Routes = [
   { path: 'admin/stockexchange', component: StockExchangeComponent },
   { path: 'admin/stockexchange/addStockExchange', component: AddStockExchangeComponent },
   { path: 'admin/stockexchange/viewStockExchange', component: ViewStockExchangeComponent },
+  {path: 'user/ipo/viewipos',component: ViewipoComponent},
+  {path: 'user/company/comparechart',component: ViewchartComponent},
+  {path: 'user/company/comparesector',component: SectorchartComponent},
   { path: '**', component: PageNotFoundComponent }
 ] 
 // children:[];
