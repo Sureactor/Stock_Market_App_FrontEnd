@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="example-container">
+     <mat-form-field appearance="fill">
+       <mat-label>IPO ID</mat-label>
+       <input matInput type="number" step="1" [value]="ipo.ipoId" [(ngModel)]="ipo.ipoId" (ngModelChange)='isIpoId($event)'>
+     </mat-form-field>
+     <br>
+
+     <mat-form-field appearance="fill" *ngIf='isOpenDateValid'>
+        <mat-label>Open Date</mat-label>
+        <input matInput [matDatepicker]="picker1" [value]="ipo.openTime" [(ngModel)]="ipo.openTime" (ngModelChange)='isOpenTime($event)'>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field><span *ngIf='isOpenDateValid'>&nbsp;&nbsp;</span>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Close Date</mat-label>
+        <input matInput [matDatepicker]="picker2"
+        [value]="ipo.closeTime" [(ngModel)]="ipo.closeTime" (ngModelChange)='isCloseTime($event)'>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field> 
+     
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Remarks</mat-label>
+       <input matInput [value]="ipo.remarks" [(ngModel)]="ipo.remarks" (ngModelChange)='isRemarks($event)'>
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Share Price</mat-label>
+       <input matInput [value]="ipo.sharePrice" [(ngModel)]="ipo.sharePrice" (ngModelChange)='isSharePrice($event)'>
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Total Shares</mat-label>
+       <input matInput type="number" step="1" [value]="ipo.totalShares" [(ngModel)]="ipo.totalShares" (ngModelChange)='isTotalShares($event)'>
+     </mat-form-field>
+     <br>
+     
+   <button  mat-raised-button [disabled]="!isValid" (click)="updateEntries()">Update</button>
+   </div>
+   

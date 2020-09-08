@@ -1,4 +1,4 @@
-Company ID : <input type="number" step="1" placeholder="CompanyID" name="companyId"  [(ngModel)]="company.companyId" required><br>
+<!-- Company ID : <input type="number" step="1" placeholder="CompanyID" name="companyId"  [(ngModel)]="company.companyId" required><br>
 CEO : <input type="text" placeholder="CEO" name="ceo"  [(ngModel)]="company.ceo" required><br>
 Brief : <input type="textbox" placeholder="Brief" name="brief" [(ngModel)]="company.brief" required><br>
 Code : <input type="text" placeholder="Code" name="code" [(ngModel)]="company.code" required><br>
@@ -7,15 +7,52 @@ Contact ID<input type="number" step="1" placeholder="Contact ID" name="contactId
 Sector ID<input type="number" step="1" placeholder="Sector ID" name="sectorId" [(ngModel)]="company.sectorId" required><br>
 Stock Exchange ID<input type="number" step="1" placeholder="Stock Exchange ID" name="stockExchangeID" [(ngModel)]="company.stockExchangeId" required><br>
 
-<button (click)="addEntry()">ADD</button>
+<button (click)="addEntry()">ADD</button> -->
 
-<div *ngIf="isShow">
-    Company ID : {{company.companyId}}<br>
-    CEO : {{company.ceo}}<br>
-    Brief : {{company.brief}}<br>
-    Code : {{company.code}}<br>
-    Name : {{company.name}}<br>
-    Contact ID : {{company.contactId}}<br>
-    Sector ID : {{company.sectorId}}<br>
-    Stock Exchange ID : {{company.stockExchangeID}}<br>
-</div>
+
+
+<div class="container">
+    <div class="example-container">
+     <mat-form-field appearance="fill">
+       <mat-label>Company ID</mat-label>
+       <input matInput type="number" step="1" [(ngModel)]="company.companyId">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>CEO</mat-label>
+       <input matInput  [(ngModel)]="company.ceo">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Brief</mat-label>
+       <input matInput  [(ngModel)]="company.brief">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Code</mat-label>
+       <input matInput  [(ngModel)]="company.code">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Name</mat-label>
+       <input matInput [(ngModel)]="company.name">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Contact ID</mat-label>
+       <input matInput type="number" step="1"  [(ngModel)]="company.contactId">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Sector ID</mat-label>
+       <input matInput type="number" step="1"  [(ngModel)]="company.sectorId">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Stock Exchange ID</mat-label>
+       <input matInput type="number" step="1"  [(ngModel)]="company.stockExchangeId">
+     </mat-form-field>
+   </div>
+   <button  mat-raised-button (click)="addEntry()">ADD</button>
+   </div>
+  

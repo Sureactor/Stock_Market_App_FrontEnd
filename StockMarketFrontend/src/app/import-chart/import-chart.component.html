@@ -1,0 +1,15 @@
+<mat-form-field appearance="fill">
+  <mat-label>Table name</mat-label>
+  <mat-select [(ngModel)]='ta' (ngModelChange)='func($event)'>
+    <mat-option *ngFor="let t of table;let i=index" [value]="i">
+      {{t}}
+    </mat-option>
+  </mat-select>
+</mat-form-field><br>
+  <div>
+    <input type='file' name="file" (change)="upload($event.target.files)">
+  </div>
+  <div>
+    <button (click)=uploadFiles()>Upload</button>
+  </div>
+

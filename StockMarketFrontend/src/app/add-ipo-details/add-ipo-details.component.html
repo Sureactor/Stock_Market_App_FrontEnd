@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="example-container">
+     <mat-form-field appearance="fill">
+       <mat-label>IPO ID</mat-label>
+       <input matInput type="number" step="1" [(ngModel)]="ipo.ipoId">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+      <mat-label>Open Date</mat-label>
+      <input matInput [matDatepicker]="picker1" [(ngModel)]="openDate">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Close Date</mat-label>
+      <input matInput [matDatepicker]="picker2"
+      [(ngModel)]="closeDate">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>  &nbsp;&nbsp;
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Remarks</mat-label>
+       <input matInput  [(ngModel)]="ipo.remarks">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Share Price</mat-label>
+       <input matInput [(ngModel)]="ipo.sharePrice">
+     </mat-form-field>
+     <br>
+     <mat-form-field appearance="fill">
+       <mat-label>Total shares</mat-label>
+       <input matInput type="number" step="1"  [(ngModel)]="ipo.totalShares">
+     </mat-form-field>
+     <br>
+   </div>
+   <button  mat-raised-button (click)="add()">ADD</button>
+   </div>
+  

@@ -1,11 +1,45 @@
-Company ID : <input type="number" step="1" [value]="company.companyId" name="companyId"  [(ngModel)]="company.companyId" (ngModelChange)='isUpdated($event)'><br>
-CEO : <input type="text" [value]="company.ceo" name="ceo"  [(ngModel)]="company.ceo" (ngModelChange)='isUpdated($event)'><br>
-Brief : <input type="text" [value]="company.brief" name="brief" [(ngModel)]="company.brief" (ngModelChange)='isUpdated($event)'><br>
-Code : <input type="text" [value]="company.code" name="code" [(ngModel)]="company.code" (ngModelChange)='isUpdated($event)'><br>
-Name : <input type="text" [value]="company.name" name="name" [(ngModel)]="company.name" (ngModelChange)='isUpdated($event)'><br>
-Contact ID<input type="number" step="1" [value]="company.contactId" name="contactId" [(ngModel)]="company.contactId" (ngModelChange)='isUpdated($event)'><br>
-Sector ID<input type="number" step="1" [value]="company.sectorId" name="sectorId" [(ngModel)]="company.sectorId" (ngModelChange)='isUpdated($event)'><br>
-Stock Exchange ID<input type="number" step="1" [value]="company.stockExchangeId" name="stockExchangeID" [(ngModel)]="company.stockExchangeId" (ngModelChange)='isUpdated($event)'><br>
 
-<button [disabled]="!isValid" (click)="updateEntries()">Update</button>
-
+ <div class="container">
+ <div class="example-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Company ID</mat-label>
+    <input matInput type="number" step="1" [value]="company.companyId" [(ngModel)]="company.companyId" (ngModelChange)='isCompanyId($event)'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>CEO</mat-label>
+    <input matInput [value]="company.ceo" [(ngModel)]="company.ceo" (ngModelChange)='isCeo($event)'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Brief</mat-label>
+    <input matInput [value]="company.brief" [(ngModel)]="company.brief" (ngModelChange)='isBrief($event)'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Code</mat-label>
+    <input matInput [value]="company.code" [(ngModel)]="company.code" (ngModelChange)='isCode($event)'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [value]="company.name" [(ngModel)]="company.name" (ngModelChange)='isName($event)'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Contact ID</mat-label>
+    <input matInput type="number" step="1" [value]="company.contactId" [(ngModel)]="company.contactId" (ngModelChange)='isContactId($event)'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Sector ID</mat-label>
+    <input matInput type="number" step="1" [value]="company.sectorId" [(ngModel)]="company.sectorId" (ngModelChange)='isSectorId($event)'>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Stock Exchange ID</mat-label>
+    <input matInput type="number" step="1" [value]="company.stockExchangeId" [(ngModel)]="company.stockExchangeId" (ngModelChange)='isStockExchangeId($event)'>
+  </mat-form-field>
+</div>
+<button  mat-raised-button [disabled]="!isValid" (click)="updateEntries()">Update</button>
+</div>

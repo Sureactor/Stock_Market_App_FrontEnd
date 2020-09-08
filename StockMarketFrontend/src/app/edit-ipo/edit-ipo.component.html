@@ -1,0 +1,13 @@
+<div *ngFor="let i of ipo;let ind=index">
+    <mat-card>
+        IPO ID :{{i.ipoId}}<br>
+        Open Time : {{i.openTime}}<br>
+        Close Time : {{i.closeTime}}<br>
+        Remarks : {{i.remarks}}<br>
+        Share Price : {{i.sharePrice}}<br>
+        Total Shares : {{i.totatShares}}<br>
+        Company ID : {{i.company.companyId}}<br><br>
+        <button  mat-raised-button (click)='update(ind)'>Update</button>
+
+    </mat-card>
+</div>

@@ -1,0 +1,13 @@
+Select Companies : <select [(ngModel)]='value1' (ngModelChange)='onValue1($event)'>
+                <option *ngFor="let comp of company" [value]="comp.companyId">{{comp.name}}</option>
+    
+          </select>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <select [(ngModel)]='value2' (ngModelChange)='onValue2($event)'>
+
+            <option  *ngFor='let comp of company' [value]="comp.companyId">{{comp.name}}</option>
+      
+            </select><br>
+
+           <button (click)="compare()">Compare</button><br>
+            <span *ngIf="isSame">Can't compare two same companies</span>

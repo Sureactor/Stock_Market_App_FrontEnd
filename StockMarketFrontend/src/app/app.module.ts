@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,25 +10,99 @@ import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-pa
 import { ManageCompaniesComponent } from './manage-companies/manage-companies.component';
 import { CompanyServiceService } from './company-service.service';
 import { EditCompanyComponent } from './edit-company/edit-company.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddCompanyComponent } from './add-company/add-company.component';
+import { UserLandingPageComponent } from './user-landing-page/user-landing-page.component';
+import { CompanyNameService } from './company-name.service';
+import { CompareCompanyComponent } from './compare-company/compare-company.component';
 
+import { CompanyChartComponent } from './company-chart/company-chart.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavComponent } from './nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import { ViewCompanyComponent } from './view-company/view-company.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { ImportChartComponent } from './import-chart/import-chart.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SliderModule } from 'angular-image-slider';
+import { UpdateIPOComponent } from './update-ipo/update-ipo.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { HomeComponent } from './home/home.component';
+import { ShowIPOComponent } from './show-ipo/show-ipo.component';
+import { AddIpoDetailsComponent } from './add-ipo-details/add-ipo-details.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { IposerviceService} from './iposervice.service';
+import { MatNativeDateModule } from "@angular/material/core"
+import {DateAdapter, MAT_DATE_FORMATS} from '@angular/material/core';
+import { EditIPOComponent } from './edit-ipo/edit-ipo.component';
+
+import { IpoCompanyService} from './ipo-company.service';
+import { EditSpecificIpoComponent } from './edit-specific-ipo/edit-specific-ipo.component';
+const modules = [
+  MatButtonModule,
+  MatFormFieldModule,
+];
 @NgModule({
   declarations: [
     AppComponent,
     AdminLandingPageComponent,
     ManageCompaniesComponent,
     EditCompanyComponent,
-    AddCompanyComponent
+    AddCompanyComponent,
+    UserLandingPageComponent,
+    CompareCompanyComponent,
+    CompanyChartComponent,
+    NavComponent,
+    ViewCompanyComponent,
+    DialogBoxComponent,
+    ImportChartComponent,
+    UpdateIPOComponent,
+    HomeComponent,
+    ShowIPOComponent,
+    AddIpoDetailsComponent,
+    EditIPOComponent,
+    EditSpecificIpoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    CommonModule,
+    NgbModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatTableModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatCardModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    SliderModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
+    MatDatepickerModule ,
+    MatNativeDateModule 
   ],
-  providers: [CompanyServiceService],
+  exports:[MatFormFieldModule,MatInputModule,MatCardModule,MatDialogModule,MatSnackBarModule,SliderModule,MatAutocompleteModule,MatDatepickerModule,MatNativeDateModule],
+  providers: [CompanyServiceService,CompanyNameService,IposerviceService,IpoCompanyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
