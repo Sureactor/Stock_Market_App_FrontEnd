@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,EventEmitter,Output } from '@angular/core';
 import { Company } from '../Company';
 import { CompanyServiceService } from '../company-service.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,25 +18,22 @@ export class ManageCompaniesComponent implements OnInit {
   re:any;
   temp:Array<Company>;
   displayedColumns:Array<string>;
+  is:"<button  mat-mini-fab color='accent' aria-label=''><mat-icon>plus_one</mat-icon></button>"
+  
+  @Output() data: EventEmitter<any> = new EventEmitter<any>();
   constructor(private service:CompanyServiceService,private activatedRoute:ActivatedRoute,private route:Router/*private dialog:MatDialogModule*/) {
-      // this.route.data.map(data=>data.comp.json()).subscribe(res)=>{
-      //   console.log(res);
-      // this.re = this.service.manageCompany("http://localhost:8081/user/company/getAll");
-      // this.re.subscribe((res:Response)=> {
-      //   let st = JSON.stringify(res);
-      //   this.company = <Company[]> JSON.parse(st);
-      //   console.log(this.company);
-      // })
+      
       this.displayedColumns = ['No.','companyId', 'name', 'contactId', 'sectorId','stockExchangeId','action'];
       console.log(this.company);
       }
 
-    
+     
       ngOnInit(){
         this.company = this.activatedRoute.snapshot.data['comp'];
         console.log(this.company);
         this.temp=this.company;
         this.service.company = this.company;
+        this.data.emit(true);
       }
 
       editCompany(index:number){
@@ -45,6 +42,9 @@ export class ManageCompaniesComponent implements OnInit {
         this.route.navigate(['../editCompany'],{relativeTo: this.activatedRoute})
       }
 
+      changer(value){
+        console.log("here");
+      }
       // openDialog(): void {
       //   const dialogRef = this.dialog.open(DialogBoxComponent, {
       //     width: '250px',
@@ -74,9 +74,4 @@ export class ManageCompaniesComponent implements OnInit {
         this.route.navigate(['../addCompany'],{relativeTo: this.activatedRoute});
       }
    }
-
-  
-
-
-
-
+   

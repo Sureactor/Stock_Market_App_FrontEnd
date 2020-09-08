@@ -16,6 +16,7 @@ export class AdminLandingPageComponent implements OnInit {
 
   company:Array<Company>;
   service:CompanyServiceService;
+  is:false;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -40,6 +41,10 @@ export class AdminLandingPageComponent implements OnInit {
 
   updateIPO(){
     this.router.navigate(['updateIPO'],{relativeTo: this.activatedRoute});
+  }
+
+  stockExchange(){
+    this.router.navigate(['stockexchange'],{relativeTo: this.activatedRoute});
   }
       
   }

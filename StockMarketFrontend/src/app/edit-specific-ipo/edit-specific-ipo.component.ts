@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyServiceService } from '../company-service.service';
 import { IpoCompanyService} from '../ipo-company.service';
-import { IPO } from '../IPO';
+import { IPO } from '../IPO1';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IposerviceService} from '../iposervice.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -13,12 +13,18 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class EditSpecificIpoComponent implements OnInit {
   ipo:IPO;
+  is:false;
   tempIpo:IPO;
   isValid:boolean=false;
   isOpenDateValid:boolean;
   val:number;
+  openTime:Date;
+  closeTime:Date;
+  tempOpen:Date;
+  tempClose:Date;
   constructor(private service:IpoCompanyService,private service1:CompanyServiceService,private route:Router,private activatedRoute:ActivatedRoute,private service2:IposerviceService,private _snackBar: MatSnackBar) { 
     this.ipo = new IPO();
+    
   }
 
   openSnackBar(message: string, action: string) {
@@ -31,6 +37,14 @@ export class EditSpecificIpoComponent implements OnInit {
     
     this.ipo = this.service.ipos[this.service.currentIpo];
     this.tempIpo = new IPO();
+    this.ipo.openTime = this.service2.formatBack(this.ipo.openTime);
+    this.ipo.closeTime = this.service2.formatBack(this.ipo.closeTime);
+    this.openTime = new Date(this.ipo.openTime);
+    this.closeTime = new Date(this.ipo.closeTime);
+    this.tempClose = new Date();
+    this.tempOpen = new Date();
+    Object.assign(this.tempOpen,this.openTime);
+    Object.assign(this.tempClose,this.closeTime);
     Object.assign(this.tempIpo,this.ipo);
     this.service2.updateColor.fill(false);
     var date = new Date();
@@ -57,7 +71,7 @@ export class EditSpecificIpoComponent implements OnInit {
     }
   }
   isOpenTime(value){
-    if(this.tempIpo.openTime != this.ipo.openTime){
+    if(this.tempOpen != this.openTime){
       if(this.isValid!=true){
        this.isValid=true;
        this.val=1;
@@ -72,7 +86,7 @@ export class EditSpecificIpoComponent implements OnInit {
     }
   }
   isCloseTime(value){
-    if(this.tempIpo.closeTime != this.ipo.closeTime){
+    if(this.tempClose != this.closeTime){
       if(this.isValid!=true){
        this.isValid=true;
        this.val=2;

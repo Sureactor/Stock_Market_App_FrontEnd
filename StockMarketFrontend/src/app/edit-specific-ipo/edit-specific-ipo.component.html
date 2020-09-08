@@ -8,7 +8,7 @@
 
      <mat-form-field appearance="fill" *ngIf='isOpenDateValid'>
         <mat-label>Open Date</mat-label>
-        <input matInput [matDatepicker]="picker1" [value]="ipo.openTime" [(ngModel)]="ipo.openTime" (ngModelChange)='isOpenTime($event)'>
+        <input matInput [matDatepicker]="picker1" [value]="ipo.openTime" [(ngModel)]="openTime" (ngModelChange)='isOpenTime($event)'>
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field><span *ngIf='isOpenDateValid'>&nbsp;&nbsp;</span>
@@ -16,7 +16,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Close Date</mat-label>
         <input matInput [matDatepicker]="picker2"
-        [value]="ipo.closeTime" [(ngModel)]="ipo.closeTime" (ngModelChange)='isCloseTime($event)'>
+        [value]="ipo.closeTime" [(ngModel)]="closeTime" (ngModelChange)='isCloseTime($event)'>
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field> 

@@ -13,7 +13,7 @@ import { CompanyServiceService } from '../company-service.service';
   styleUrls: ['./user-landing-page.component.css']
 })
 export class UserLandingPageComponent implements OnInit {
-
+  is:false;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -29,8 +29,12 @@ export class UserLandingPageComponent implements OnInit {
   ngOnInit(): void {
   }
   IPO(){
-    this.router.navigate(['IPO'],{relativeTo: this.activatedRoute})
+    this.router.navigate(['viewIpo'],{relativeTo: this.activatedRoute});
   }
   
+  compareCompany(){
+    console.log("here");
+    this.router.navigate(['company/comparechart'],{relativeTo: this.activatedRoute});
+  }
 
 }

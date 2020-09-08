@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-company.component.css']
 })
 export class AddCompanyComponent implements OnInit {
-
+  is:false;
   company:Company;
   isShow:boolean;
   constructor(private service:CompanyServiceService,private route:Router,private activatedRoute:ActivatedRoute) {

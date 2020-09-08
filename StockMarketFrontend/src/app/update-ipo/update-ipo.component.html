@@ -1,12 +1,13 @@
-<mat-form-field class="example-full-width">
+<div class="flexbox-parent">
+<mat-card layout-align="center center"><mat-form-field class="example-full-width">
       <input type="text"
              placeholder="Company ID"
              aria-label="Number"
              matInput
              [formControl]="myControl"
              [matAutocomplete]="auto"
-             [value]="val">
-      <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption   (optionSelected)="changer($event.option)">
+             [value]="val" flex="15">
+      <mat-autocomplete #auto="matAutocomplete" autoActiveFirstOption   (optionSelected)="changer($event.option)" flex="15">
         <mat-option *ngFor="let option of filteredOptions | async;let i=index" [value]="option">
           {{option}}
         </mat-option>
@@ -16,3 +17,5 @@
 <button  mat-raised-button (click)="addIpoDetails()">Add new IPO details</button>
 
 <button  mat-raised-button (click)="showIpoDetails()">Update new IPO details</button>
+</mat-card>
+</div>

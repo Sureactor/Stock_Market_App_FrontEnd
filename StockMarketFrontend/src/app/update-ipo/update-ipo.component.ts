@@ -20,7 +20,7 @@ export class UpdateIPOComponent implements OnInit {
   t:number;
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
-
+  is:false;
   constructor(private route:Router,private activatedRoute:ActivatedRoute,private service:IposerviceService,private http:HttpClient) {
       this.t=31;
    }

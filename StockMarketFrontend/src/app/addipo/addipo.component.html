@@ -1,0 +1,78 @@
+<p>addipo works!</p>
+<h1>Enter the new Company IPO Details</h1>
+     {{ipoForm.value | json}}
+            llllllllll
+            {{ipos | json}}-->
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #ipoForm="ngForm">
+      <div class="form-group">
+        <label for="IPOId">IPO Id</label>
+        <input type="text" [(ngModel)]=" ipos.ipo_id"
+               class="form-control"
+               id="stockExchangeId"
+               name="stockExchangeId"
+               placeholder="Enter the stockId"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="opentime">Open date</label>
+        <input type="date" [(ngModel)]="ipos.open_time"
+               class="form-control"
+               id="open_time"
+               name="open_time"
+               placeholder="yyyy-MM-dd"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="remarks">Close date</label>
+        <input type="date" [(ngModel)]="ipos.close_time"
+               class="form-control"
+               id="close_time"
+               name="close_time"
+               placeholder="yyyy-MM-dd"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="contactId">Remarks</label>
+        <input type="text" [(ngModel)]="ipos.remarks"
+               class="form-control"
+               id="remarks"
+               name="remarks"
+               placeholder="Enter the remarks"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="contactId">Share price</label>
+        <input type="text" [(ngModel)]="ipos.share_price"
+               class="form-control"
+               id="share_price"
+               name="share_price"
+               placeholder="Enter the share_price"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="contactId">Total Shares</label>
+        <input type="text" [(ngModel)]="ipos.total_shares"
+               class="form-control"
+               id="total_shares"
+               name="total_shares"
+               placeholder="Enter the total_shares"
+               required #name="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="contactId">Company Id</label>
+        <input type="text" [(ngModel)]="ipos.company_id"
+               class="form-control"
+               id="company_id"
+               name="company_id"
+               placeholder="Enter the company_id"
+               required #name="ngModel">
+      </div>
+      <button type="submit" [disabled]="!ipoForm.form.valid" class="btn btn-info">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+<p>{{message}}</p>

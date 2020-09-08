@@ -1,0 +1,31 @@
+<h2 style="text-align:center">Listed IPOs(Chronological Order)</h2>
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped" >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ipo_id</th>
+          <th scope="col">open_time</th>
+          <th scope="col">close_time</th>
+          
+          <th scope="col">remarks</th>
+          <th scope="col">share_price</th>
+          <th scope="col">total_shares</th>
+          <th scope="col">company_id - name</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of ipos">
+          <td>{{ i.ipoId }}</td>
+          <td>{{ i.openTime }}</td>
+          <td>{{ i.closeTime }}</td>
+          <td>{{ i.remarks }}</td>
+          <td>{{ i.sharePrice }}</td>
+          <td>{{ i.totalShares}}</td>
+          <td>{{ i.company.companyId}}-{{i.company.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

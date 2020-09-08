@@ -13,6 +13,7 @@ export class EditCompanyComponent implements OnInit {
   val:number;
   tempCompany:Company;
   isValid:boolean;
+  is:false;
   constructor(private service:CompanyServiceService,private route:Router,private activatedRoute:ActivatedRoute) { 
     
     this.company = this.service.company[this.service.currentIndex];

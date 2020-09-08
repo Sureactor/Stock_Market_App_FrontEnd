@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IPO} from '../IPO';
+import {IPO} from '../IPO1';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IpoCompanyService} from '../ipo-company.service';
 import { IposerviceService} from '../iposervice.service';
@@ -13,7 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class EditIPOComponent implements OnInit {
   ipo:IPO[];
   constructor(private route:Router,private activatedRoute:ActivatedRoute,private service:IpoCompanyService,private service1:IposerviceService,private _snackBar: MatSnackBar) { }
-
+  is:false;
   ngOnInit(): void {
     this.ipo= this.activatedRoute.snapshot.data['c'];
     this.service.ipos = this.ipo;

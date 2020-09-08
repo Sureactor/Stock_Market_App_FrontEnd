@@ -9,6 +9,7 @@ import { CompanyServiceService } from '../company-service.service';
 export class ViewCompanyComponent implements OnInit {
   company:Company;
   isValid:boolean[];
+  is:false;
   constructor(private service:CompanyServiceService) { 
     if(this.service.flag == 1)
       this.company = this.service.addedCompany;

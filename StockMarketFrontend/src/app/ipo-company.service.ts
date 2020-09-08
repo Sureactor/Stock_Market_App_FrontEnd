@@ -4,14 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { IposerviceService} from './iposervice.service'
-import {IPO} from './IPO';
+import {IPO} from './IPO1';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IpoCompanyService {
   companyId:number;
-  currentIpo:number;
+  currentIpo:number;  
   ipos:IPO[];
   updateIpo:IPO;
   constructor(private http:HttpClient,private service:IposerviceService) {

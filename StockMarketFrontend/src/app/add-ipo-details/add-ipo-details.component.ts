@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{IPO} from "../IPO";
+import{IPO} from "../IPO1";
 import {IposerviceService} from '../iposervice.service';
 import {CompanyServiceService} from '../company-service.service';
 
@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-ipo-details.component.css']
 })
 export class AddIpoDetailsComponent implements OnInit {
-
+  is:false;
   ipo:IPO;
   closeDate:Date;
   openDate:Date;
@@ -43,6 +43,7 @@ export class AddIpoDetailsComponent implements OnInit {
     obs.subscribe((res:Response)=>{
       console.log(res);
       this.service.addedIPO = this.ipo;
+      this.service.flag = 1;
       this.route.navigate(['../update/showIpo'],{relativeTo: this.activatedRoute})
     });}
     else{

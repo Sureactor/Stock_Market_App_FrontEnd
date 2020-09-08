@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { IPO } from './IPO';
+import { IPO } from './IPO1';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +38,14 @@ export class IposerviceService {
     v+=year+'-'+day+'-'+month;
     console.log(v);
     return v;
+  }
+
+
+  formatBack(date:string){
+    let d:string[]=date.split('-');
+    let da='';
+    da+= d[2]+'/'+d[1]+'/'+d[0];
+    return da;
   }
 
   checkYear(y1:number,y2:number){

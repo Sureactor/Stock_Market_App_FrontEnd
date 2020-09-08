@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./compare-company.component.css']
 })
 export class CompareCompanyComponent implements OnInit {
-
+  is:false;
   company:Array<Company>;
   isSame:boolean=false;
 

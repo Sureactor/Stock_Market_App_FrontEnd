@@ -7,7 +7,7 @@
       <mat-nav-list>
         <a mat-list-item role="button" (click)="import()">Import Data</a>
         <a mat-list-item role="button" (click)="getAllCompany()">Manage Companies</a>
-        <a mat-list-item href="#">Manage Exchange</a>
+        <a mat-list-item role="button" (click)="stockExchange()">Manage Exchange</a>
         <a mat-list-item role="button" (click)="updateIPO()">Update IPO Details</a>
       </mat-nav-list>
     </mat-sidenav>
@@ -21,11 +21,12 @@
           *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
-        <div class="container">
         <span>Stock Market Analyser</span>
-       
-    </div>
+        <span class="example-spacer"></span>
+        <span *ngIf="is" (data)="changer($event)">
+        </span>
       </mat-toolbar>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+

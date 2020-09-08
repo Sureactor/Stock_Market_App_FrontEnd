@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IPO } from '../IPO';
+import { IPO } from '../IPO1';
 import { IposerviceService} from '../iposervice.service';
 import { IpoCompanyService} from '../ipo-company.service'
 
@@ -11,6 +11,7 @@ import { IpoCompanyService} from '../ipo-company.service'
 export class ShowIPOComponent implements OnInit {
   ipo:IPO;
   isValid:boolean[];
+  is:false;
   constructor(private service:IposerviceService,private service1:IpoCompanyService) { }
 
   ngOnInit(): void {

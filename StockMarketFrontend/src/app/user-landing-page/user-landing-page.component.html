@@ -13,7 +13,7 @@
       <mat-toolbar>Menu</mat-toolbar>
       <mat-nav-list>
         <a mat-list-item role="button" (click)="IPO()">IPO</a>
-        <a mat-list-item href="#">Compare Companies</a>
+        <a mat-list-item role="button" (click)="compareCompany()">Compare Companies</a>
         <a mat-list-item href="#">Compare sector</a>
         <a mat-list-item href="#">Other</a>
       </mat-nav-list>
@@ -36,3 +36,8 @@
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+<p>user-landing-page works!</p>
+<button [routerLink]="'/user/ipo/viewipos'">View upcoming ipo</button><br><br>
+<button >Compare Companies</button><br><br>
+<button [routerLink]="'/user/company/comparesector'">Compare Sector</button><br><br>
+

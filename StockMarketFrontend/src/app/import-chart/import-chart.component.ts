@@ -18,6 +18,7 @@ export class ImportChartComponent implements OnInit {
   file:File;
   ta:number;
   files:FileList;
+  is:false;
   constructor(private service:CompanyServiceService,private route:Router,private activatedRoute:ActivatedRoute,private http:HttpClient,private _snackBar: MatSnackBar) { 
       this.ta=0;
       
