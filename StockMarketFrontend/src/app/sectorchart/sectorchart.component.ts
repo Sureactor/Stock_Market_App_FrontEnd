@@ -67,7 +67,7 @@ export class SectorchartComponent implements OnInit{
      }
     })
   */
- this.fetch=this.http.get("http://localhost:8081/user/sectordetails")
+ this.fetch=this.http.get("http://localhost:8080/user/sectordetails")
  .subscribe((res:any)=>{
    console.log(res);
      res.forEach(element => {
@@ -104,7 +104,7 @@ export class SectorchartComponent implements OnInit{
   fetchCompanyData(){
     var data;
     var i=0;
-    this.fetch2 = this.http.get("http://localhost:8081/user/sector/stock/"+this.company1Id+"/"+this.sectorobj.from+"/"+this.sectorobj.to)
+    this.fetch2 = this.http.get("http://localhost:8080/user/sector/stock/"+this.company1Id+"/"+this.sectorobj.from+"/"+this.sectorobj.to)
     .subscribe((res:any)=>{
       console.log(res);
         this.company = res;
@@ -117,7 +117,7 @@ export class SectorchartComponent implements OnInit{
       )}
       )
       var j=0;
-      this.fetch3 = this.http.get("http://localhost:8081/user/sector/stock/"+this.company2Id+"/"+this.sectorobj.from+"/"+this.sectorobj.to)
+      this.fetch3 = this.http.get("http://localhost:8080/user/sector/stock/"+this.company2Id+"/"+this.sectorobj.from+"/"+this.sectorobj.to)
 
     .subscribe((res2:any)=>{
       console.log(res2);

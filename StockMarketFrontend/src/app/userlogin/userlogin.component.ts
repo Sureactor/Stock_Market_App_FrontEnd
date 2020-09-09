@@ -23,7 +23,7 @@ export class UserloginComponent implements OnInit {
   onSubmit()
   {
     //console.log(this.admin);
-    this.fetch=this.http.post("http://localhost:8081/user/login",this.user)
+    this.fetch=this.http.post("http://localhost:8080/user/login",this.user)
  .subscribe((res:any)=>{
    //console.log(res);
    if(res==true)
