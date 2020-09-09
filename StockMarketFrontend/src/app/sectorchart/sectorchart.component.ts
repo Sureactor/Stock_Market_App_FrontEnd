@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Chart } from 'chart.js';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import {comparemodel} from 'src/app/comparemodel';
+import {sectormodel} from 'src/app/sectormodel';
 import { FormGroup, FormControl } from '@angular/forms';
 import { NgForm }   from '@angular/forms';
 @Component({
@@ -31,6 +32,7 @@ export class SectorchartComponent implements OnInit{
   company1name;
   company2name;
   cmpmodel =new comparemodel("rr","rrrrdd","","",new Date(),new Date());
+  sectorobj = new sectormodel("","",new Date(),new Date());
  sectors=[];
  stockexchanges=[];
   companies=[];
@@ -76,6 +78,7 @@ export class SectorchartComponent implements OnInit{
    
         //this.message2 = "Data not found";  
  }
+ /*
  myfunc()
  {
   this.sectorId=this.cmpmodel.sector.split("-",1)[0];
@@ -97,10 +100,11 @@ export class SectorchartComponent implements OnInit{
     )}
     )
  }
+ */
   fetchCompanyData(){
     var data;
     var i=0;
-    this.fetch2 = this.http.get("http://localhost:8081/user/company/"+this.company1Id+"/"+this.cmpmodel.from+"/"+this.cmpmodel.to)
+    this.fetch2 = this.http.get("http://localhost:8081/user/sector/stock/"+this.company1Id+"/"+this.sectorobj.from+"/"+this.sectorobj.to)
     .subscribe((res:any)=>{
       console.log(res);
         this.company = res;
@@ -113,7 +117,7 @@ export class SectorchartComponent implements OnInit{
       )}
       )
       var j=0;
-      this.fetch3 = this.http.get("http://localhost:8081/user/company/"+this.company2Id+"/"+this.cmpmodel.from+"/"+this.cmpmodel.to)
+      this.fetch3 = this.http.get("http://localhost:8081/user/sector/stock/"+this.company2Id+"/"+this.sectorobj.from+"/"+this.sectorobj.to)
 
     .subscribe((res2:any)=>{
       console.log(res2);
@@ -263,10 +267,10 @@ this.chart = new Chart("canvas2", {
 }
 
 onSubmit(){
-   this.company1Id=this.cmpmodel.company1.split("-",1)[0];
-   this.company1name=this.cmpmodel.company1;
-   this.company2Id=this.cmpmodel.company2.split("-",1)[0];
-   this.company2name=this.cmpmodel.company2;
+   this.company1Id=this.sectorobj.sector1.split("-",1)[0];
+   this.company1name=this.sectorobj.sector1;
+   this.company2Id=this.sectorobj.sector2.split("-",1)[0];
+   this.company2name=this.sectorobj.sector2 ;
   this.fetchCompanyData();
   this.func();
 }

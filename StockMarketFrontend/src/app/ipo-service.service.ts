@@ -14,12 +14,12 @@ export class IpoServiceService {
   constructor(private http: HttpClient)
   {
     this.addurl = 'http://localhost:8080/admin/company/ipo/add';
-    this.viewurl = 'http://localhost:8080/user/company/ipolatest';
+    this.viewurl = 'http://localhost:8081/user/company/ipolatest';
   }
   public getAllStockExchange(): Observable<ipo[]> {
     return this.http.get<ipo[]>(this.viewurl);
   }
-
+  
   public addStockExchange(i: ipo) {
     console.log("inside add stock");
     return this.http.post<ipo>(this.addurl, i);

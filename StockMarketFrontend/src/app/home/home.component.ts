@@ -15,11 +15,11 @@ export class HomeComponent implements OnInit {
   }
 
   user(){
-      this.route.navigateByUrl('user');
+      this.route.navigateByUrl('userlogin');
   }
 
   admin(){
-      this.route.navigateByUrl('admin');
+      this.route.navigateByUrl('adminlogin');
   }
 
 }

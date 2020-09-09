@@ -27,9 +27,16 @@ import { SuccessComponent } from './success/success.component'
 import { ViewipoComponent } from './viewipo/viewipo.component';
 import { SectorchartComponent } from './sectorchart/sectorchart.component';
 import { ViewchartComponent } from './viewchart/viewchart.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { UserloginComponent } from './userlogin/userlogin.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
 // { path: '', redirectTo: '/home', pathMatch:'full' },
 const routes: Routes = [
 {path:'home', component:HomeComponent},
+{ path: '', redirectTo: '/home', pathMatch:'full' },
+{path:'adminlogin', component:AdminloginComponent},
+{path:'userlogin', component:UserloginComponent},
+{path:'usersignup', component:UsersignupComponent},
   {path:'admin', component:AdminLandingPageComponent,
   children:[
     {path:'companies', component:ManageCompaniesComponent, resolve:{comp:CompanyServiceService}},

@@ -36,5 +36,9 @@ export class UserLandingPageComponent implements OnInit {
     console.log("here");
     this.router.navigate(['company/comparechart'],{relativeTo: this.activatedRoute});
   }
+  compareSector(){
+    console.log("here");
+    this.router.navigate(['company/comparesector'],{relativeTo: this.activatedRoute});
+  }
 
 }

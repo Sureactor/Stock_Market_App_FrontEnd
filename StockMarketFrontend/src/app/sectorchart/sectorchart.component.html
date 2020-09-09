@@ -1,22 +1,31 @@
-<p>sectorchart works!</p>
-<h1>Company Comparison</h1>
+
+<h1>Sector Comparison</h1>
  
 <form #sectorForm="ngForm" (ngSubmit)="onSubmit()">
-<!--     {{userForm.value | json}}
+<!--   {{sectorForm.value | json}}
     llllllllll
-    {{cmpmodel | json}}-->
+    {{sectorobj | json}}> -->
     <div class="form-group">
-        From : <input name="from"  type="date" datetime="yyyy-MM-dd" [(ngModel)]="cmpmodel.from"  placeholder="yyyy-MM-dd">
+        From : <input name="from"  type="date" datetime="yyyy-MM-dd" [(ngModel)]="sectorobj.from"  placeholder="yyyy-MM-dd">
         <br>
-        To : <input name="to"  type="date" [(ngModel)]="cmpmodel.to"  placeholder="yyyy-MM-dd">
+        To : <input name="to"  type="date" [(ngModel)]="sectorobj.to"  placeholder="yyyy-MM-dd">
         <br>
        <!-- value = {{cmpmodel.from | date: "yyyy-MM-dd"}}-->
-        <label> Sector</label>
-        <select class="custom-select" name="sector" [(ngModel)]="cmpmodel.sector" (change)="myfunc()">
-            <option value="">Select Sector</option>
+        <label> Sector 1</label>
+        <select class="custom-select" name="sector" [(ngModel)]="sectorobj.sector1">
+            <option value="">Select Sector 1</option>
+            <option *ngFor="let sec of sectors" value={{sec}}>{{sec}}</option>
+        </select>
+        <label> Sector 2</label>
+        <select class="custom-select" name="sector" [(ngModel)]="sectorobj.sector2" >
+            <option value="">Select Sector 2</option>
             <option *ngFor="let sec of sectors" value={{sec}}>{{sec}}</option>
         </select>
     <button class="btn btn-primary" type="submit" ngModel>Show Comparison Chart</button>
     </div>
 </form>
   
+<script src="node_modules/chart.js/src/chart.js"></script>
+<!--- <canvas #lineChart>{{ chart }}</canvas>-->
+<div style="width:25%; height:25%; align-items: center  "><canvas id="canvas2"  width="100" height="100"></canvas></div> 
+<p *ngIf="message!=null">{{message}}</p>
