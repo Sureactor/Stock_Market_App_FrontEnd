@@ -25,7 +25,7 @@ export class UsersignupComponent implements OnInit {
   onSubmit()
   {
     //console.log(this.admin);
-    this.fetch=this.http.post("http://localhost:8081/user/signup",this.user)
+    this.fetch=this.http.post("http://localhost:8080/user/signup",this.user)
  .subscribe((res:any)=>{
    //console.log(res);
    if(res==true)

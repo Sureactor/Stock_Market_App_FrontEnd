@@ -30,6 +30,7 @@ import { ViewchartComponent } from './viewchart/viewchart.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UsersignupComponent } from './usersignup/usersignup.component';
+import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 // { path: '', redirectTo: '/home', pathMatch:'full' },
 const routes: Routes = [
 {path:'home', component:HomeComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
 {path:'adminlogin', component:AdminloginComponent},
 {path:'userlogin', component:UserloginComponent},
 {path:'usersignup', component:UsersignupComponent},
+{path:'userforgotpwd', component:ForgotpwdComponent},
   {path:'admin', component:AdminLandingPageComponent,
   children:[
     {path:'companies', component:ManageCompaniesComponent, resolve:{comp:CompanyServiceService}},

@@ -1,0 +1,54 @@
+<h1> FORGOT PASSSWORD</h1>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #forgotForm="ngForm">
+      <b><font color="red">{{ message}}</font></b>
+      <div class="form-group">
+        <label for="email">Enter the registered email id: </label>
+        <input type="text" [(ngModel)]="user.email"
+               class="form-control"
+               id="email"
+               name="email"
+               placeholder="Enter the email"
+               required #name="ngModel">
+      </div>
+      
+      <button type="submit"  class="btn btn-info">
+        Submit
+      </button> 
+        
+    </form>
+    <div *ngIf= "flag"  class="form-group">
+      <label for="otp">Enter OTP:</label>
+      <input type="otp" [(ngModel)]="user.forgottoken"
+             class="form-control"
+             id="otp"
+             name="otp"
+             placeholder="Enter the otp"
+             required #name="ngModel">
+             <button  (click)="onClickMe()" class="btn btn-link" >
+              Validate
+            </button>
+    </div>
+    <div *ngIf= "passwordflag"  class="form-group">
+      <label for="password">Enter new password:</label>
+      <input type="password" [(ngModel)]="user.password"
+             class="form-control"
+             id="password"
+             name="password"
+             placeholder="Enter the new password"
+             required #name="ngModel">
+<br>
+             <label for="updated">Confirm password:</label>
+             <input type="password" [(ngModel)]="user.updated"
+                    class="form-control"
+                    id="updated"
+                    name="updated"
+                    placeholder="Enter the updated"
+                    required #name="ngModel">
+             <button  (click)="onClickUpdate()" class="btn btn-link" >
+              Update Password
+            </button>
+    </div>
+  </div>
+</div>

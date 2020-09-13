@@ -6,5 +6,6 @@ export class usermodel{
 	email: string;
 	mobile: string; 
 	confirm: number;
- 
+	forgottoken: string;
+	updated: string;
  } 

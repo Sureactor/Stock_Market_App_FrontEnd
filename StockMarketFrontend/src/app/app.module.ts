@@ -62,6 +62,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { IpoCompanyService} from './ipo-company.service';
 import { EditSpecificIpoComponent } from './edit-specific-ipo/edit-specific-ipo.component';
+import { ForgotpwdComponent } from './forgotpwd/forgotpwd.component';
 declare var is:boolean;
 const modules = [
   MatButtonModule,
@@ -100,7 +101,8 @@ const modules = [
     SectorchartComponent,
     UserloginComponent,
     AdminloginComponent,
-    UsersignupComponent
+    UsersignupComponent,
+    ForgotpwdComponent
   ],
   imports: [
     BrowserModule,
